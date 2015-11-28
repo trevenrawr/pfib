@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
 
-public int fib(int n) {
+int fib(int n) {
 	if (n == 0)
 		return 0;
 	else if (n == 1)
@@ -11,12 +11,12 @@ public int fib(int n) {
 
 int main() {
 	int n;
-	int f;
+	long f;
 
 	printf( "Enter fib number:" );
 	scanf( "%d", &n );
 	f = fib(n);
-	printf( "Fib of %d is %d. \n", n, f);
+	printf( "Fib of %d is %ld. \n", n, f);
 	getchar();
 	return 0;
 }
