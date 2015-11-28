@@ -11,11 +11,11 @@ public int fib(int n) {
 
 int main() {
 	int n;
-	long f;
+	int f;
 
 	printf( "Enter fib number:" );
 	scanf( "%d", &n );
-	&f = fib(n);
+	f = fib(n);
 	printf( "Fib of %d is %d. \n", n, f);
 	getchar();
 	return 0;
