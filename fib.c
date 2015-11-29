@@ -13,7 +13,7 @@ int main() {
 	int n;
 	long f;
 
-	printf( "Enter fib number:" );
+	printf( "Enter fib number: " );
 	scanf( "%d", &n );
 	f = fib(n);
 	printf( "Fib of %d is %ld. \n", n, f);
