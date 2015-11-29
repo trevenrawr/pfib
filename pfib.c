@@ -6,7 +6,7 @@ typedef struct {
 	long res;
 } FibArgs;
 
-void fib(void * arg) {
+void *fib(void *arg) {
 	FibArgs *args = arg;
 	if ( args->n == 0 )
 		args->res = 0;
@@ -24,11 +24,12 @@ void fib(void * arg) {
 		pthread_join( th2, NULL );
 		args->res = one.res + two.res;
 	}
+
+	return 0;
 }
 
 int main() {
 	int n;
-	long f;
 	pthread_t tid;
 
 	printf( "Enter fib number:" );
@@ -38,7 +39,7 @@ int main() {
 	pthread_create( &tid, NULL, fib, &start );
 	pthread_join( tid, NULL );
 
-	printf( "Fib of %d is %ld. \n", n, f);
+	printf( "Fib of %d is %ld. \n", n, start.res);
 	getchar();
 	return 0;
 }
